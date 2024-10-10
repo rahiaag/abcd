@@ -7,9 +7,7 @@ class Solution{
 public:
     int evenlyDivides(int N){
         int count=0;
-        
-        int num=N;
-        
+        int num=N;  // if we put this line below continue then continue statement will skip this statement and infinite loop will be there
         while (num!=0){
             int remainder=num%10;
             num/=10;
@@ -19,7 +17,6 @@ public:
             if (N%remainder==0){
                 count++;
             }
-
         }
         return count;
     }
