@@ -7,17 +7,10 @@ void swap(int *xp, int *yp)
     *xp = *yp;
     *yp = temp;
 }
-
-
 // } Driver Code Ends
 class Solution
 {
     public:
-    int select(int arr[], int i)
-    {
-        
-    }
-     
     void selectionSort(int arr[], int n)
     {
        for (int i=0;i<n-1;i++){
@@ -27,15 +20,12 @@ class Solution
                    minimum=j;
                }
            }
-               
-               if (minimum!=i){
-                   swap(arr[minimum],arr[i]);
-               }
-           
+            if (minimum!=i){
+                swap(arr[minimum],arr[i]);
+            }  
        }
     }
 };
-
 //{ Driver Code Starts.
  
 /* Function to print an array */
