@@ -12,24 +12,23 @@ class Solution {
     // largest elements
     int getSecondLargest(vector<int> &arr) {
         
-        unordered_set<int>result(arr.begin(),arr.end());
-        
-        priority_queue<int,vector<int>,greater<int>>ans;
-        
-        int sizeofarr=result.size();
-        if (sizeofarr<2){
+        set<int>mp(arr.begin(),arr.end());
+        if (mp.size()<2){
             return -1;
         }
+        priority_queue<int>mpp;
         
-        for (auto i:result){
-            ans.push(i);
-            
-            if (ans.size()>2){
-                ans.pop();
-            }
+         for (auto i:mp){
+            mpp.push(i);
         }
-        int n=ans.top();
+        
+        mpp.pop();
+        int n=mpp.top();
+        
         return n;
+        
+        
+        
     }
 };
 
@@ -51,6 +50,7 @@ int main() {
         Solution ob;
         int ans = ob.getSecondLargest(arr);
         cout << ans << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
