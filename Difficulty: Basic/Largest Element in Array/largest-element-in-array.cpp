@@ -13,13 +13,11 @@ using namespace std;
 class Solution {
   public:
     int largest(vector<int> &arr) {
-        priority_queue<int>ans;
-        
+        priority_queue<int>mp;
         for (auto i:arr){
-            ans.push(i);
+            mp.push(i);
         }
-        int a=ans.top();
-        return a;
+        return mp.top();
     }
 };
 
@@ -45,6 +43,7 @@ int main() {
 
         Solution ob;
         cout << ob.largest(arr) << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
