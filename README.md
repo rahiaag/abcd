@@ -1,6 +1,6 @@
-# LeetCode
-# Geeksforgeeks
-# Codeforces
+LeetCode
+Geeksforgeeks
+Codeforces
 
 This repository contains my solutions to problems.
 
