@@ -1,0 +1,19 @@
+//we make linked list in _heap 
+//not store in  memory location
+//we can not access linked list in constant time
+
+/*The choice between using a linked list or an array depends on the specific requirements and characteristics of your use case. Here are some scenarios where one data structure might be more suitable than the other:
+
+Use Linked List:
+
+When you need efficient insertion and deletion operations, especially at the beginning or middle of the collection. Linked lists have constant time complexity for these operations.
+When you have a dynamic or unknown number of elements to store, as linked lists can dynamically allocate memory as needed.
+When you have memory constraints or the size of the collection may vary significantly over time, as linked lists can use memory more efficiently than arrays.
+Use Array:
+
+When you require random access to elements based on their indices. Arrays allow constant time access to any element.
+When you know the size of the collection in advance and it remains constant, as arrays have a fixed size.
+When you need to store primitive data types or objects that have a fixed size in memory.
+Additionally, arrays are generally more memory-efficient than linked lists because they don't require extra memory for node references. If memory usage is a concern and random access is not required, arrays might be preferred.
+
+It's worth noting that some programming languages offer dynamic arrays (such as ArrayList in Java or List in C#) that provide a combination of array-like random access and dynamic resizing, which can be a good compromise in certain scenarios.*/
