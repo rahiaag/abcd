@@ -4,9 +4,10 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-  
+  /*
   int GCD(int a,int b){
       int maxi=1;
       for (int i=1;i<=min(a,b);i++){
@@ -25,14 +26,17 @@ class Solution {
       
       return hcf;
   }
+  */
     vector<int> lcmAndGcd(int a, int b) {
         vector<int>ans;
         
-        int lcm=GCD(a,b);
-        int hcf=HCF(a,b);
-        ans.push_back(hcf);
-        ans.push_back(lcm);
+        int hcf=__gcd(a,b);
+        int lcm=(a*b)/hcf;
         
+        //int lcm=GCD(a,b);
+        //int hcf=HCF(a,b);
+        ans.push_back(lcm);
+        ans.push_back(hcf);
         
         return ans;
     }
