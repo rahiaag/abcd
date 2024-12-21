@@ -9,14 +9,14 @@ class Solution {
   public:
   
   int sumOfdiv(int n){
-      int sum=0;
+      int add=0;
       
       for (int i=1;i<=n;i++){
           if (n%i==0){
-              sum+=i;
+              add+=i;
           }
       }
-      return sum;
+      return add;
   }
     int sumOfDivisors(int n) {
         int sum=0;
