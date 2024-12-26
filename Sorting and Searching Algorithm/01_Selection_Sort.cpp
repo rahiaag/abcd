@@ -10,7 +10,7 @@ void selectionSort(int arr[], int siz)
         int mini = i;
         for (int j = i + 1; j < siz; j++) // We are using index (i+1) because we are camparing the i th index with all the remaining numbers
         {
-            if (arr[j] < arr[i])
+            if (arr[j] < arr[mini])
             {
                 mini = j;
             }
