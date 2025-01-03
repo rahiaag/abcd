@@ -8,6 +8,25 @@ class Solution {
   public:
     vector<int> intersectionWithDuplicates(vector<int>& a, vector<int>& b) {
         vector<int>ans;
+        set<int>st;
+        
+        for (auto i:a){
+            st.insert(i);
+        }
+        set<int>res;
+        
+        for (int i=0;i<b.size();i++){
+            if (st.find(b[i])!=st.end()){
+                res.insert(b[i]);
+            }
+        }
+        for (auto i=res.begin();i!=res.end();i++){
+            ans.push_back(*i);
+        }
+        
+        return ans;
+        
+        /*vector<int>ans;
         set<int>mp;
 
         for (auto i:a){
@@ -32,8 +51,10 @@ class Solution {
         }
         for (auto i:mp){
             ans.push_back(i);
-        }*/
-        return ans;
+        }
+        
+        
+        return ans;*/
     }
 };
 
