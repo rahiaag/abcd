@@ -8,11 +8,9 @@ using namespace std;
 class Solution {
   public:
     int countPairs(vector<int> &arr, int target) {
-
+        
+       /* int n=arr.size();
         int count=0;
-        int low=0;
-        int n=arr.size();
-        int high=arr.size()-1;
         
         unordered_map<int,int>mp;
         
@@ -25,14 +23,48 @@ class Solution {
             }
             mp[arr[i]]++;
         }
-                
-            
+        return count;*/
         
-        return count;
+         int left = 0; int right = arr.size() - 1;int pairs = 0;
+        
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+            
+            if (sum == target) {
+                pairs += 1;
+                int tempLeft = left + 1;
+                while (tempLeft < right && arr[tempLeft] == arr[tempLeft - 1]) {
+                    pairs += 1;
+                    tempLeft++;
+                }
+                
+                int tempRight = right - 1;
+                while (left < tempRight && arr[tempRight] == arr[tempRight + 1]) {
+                    pairs += 1;
+                    tempRight--;
+                }
+                
+                left++;
+                right--;
+            }
+            
+            else if (sum > target) {
+                right--;
+            }
+            
+            else {
+                left++;
+            }
+        }
+        
+        return pairs;
     }
 };
 
 /*
+temporary vector 
+vector<int>vc={a,b};
+
 
 class Solution {
   public:
