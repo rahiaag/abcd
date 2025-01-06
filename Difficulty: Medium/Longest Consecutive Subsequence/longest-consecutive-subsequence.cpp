@@ -10,7 +10,34 @@ class Solution {
 
     // Function to return length of longest subsequence of consecutive integers.
     int longestConsecutive(vector<int>& arr) {
-        sort(arr.begin(),arr.end());
+        
+        int n=arr.size();
+        int maxi=INT_MIN;
+        
+        set<int>st;
+        for (int i:arr){
+            st.insert(i);
+        }
+        
+        for (int i :st){
+            if (st.find(i-1)==st.end()){
+                int count=1;
+                int x=i;
+                
+                while (st.find(x+1)!=st.end()){
+                    count++;
+                    x++;
+                }
+                maxi=max(maxi,count);
+            }
+            
+        }
+        return maxi;
+       
+    }
+};
+
+/* sort(arr.begin(),arr.end());
         int count=1;
         int maxi=1;
         for (int i=0;i<arr.size()-1;i++){
@@ -26,9 +53,7 @@ class Solution {
                 count=1;
             }
         }
-        return maxi;
-    }
-};
+        return maxi;*/
 
 //{ Driver Code Starts.
 int main() {
