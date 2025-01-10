@@ -7,29 +7,51 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 
+
 class Solution {
   public:
     int countSubarrays(vector<int> &arr, int k) {
+        int n=arr.size();
         int count=0;
-        int sum=0;
-        unordered_map<int,int>mp;
         
-        for (int i=0;i<arr.size();i++){
-            sum+=arr[i];
-            if (sum==k){
-                count++;
+        unordered_map<int,int>mp;
+        mp[0]++;
+        int sum=0;
+        
+        for (int i:arr){
+            sum+=i;
+            int comp=sum-k;
+            if (mp.find(comp)!=mp.end()){
+                count+=mp[comp];
             }
             mp[sum]++;
-            
-            if (mp.find(sum-k)!=mp.end()){
-                count+=mp[sum-k];
-            }
-            
-        
         }
         return count;
     }
 };
+
+/*
+class Solution {
+  public:
+    int countSubarrays(vector<int> &arr, int k) {
+        int n=arr.size();
+        int count=0;
+        
+        for (int i=0;i<n;i++){
+            int sum=arr[i];
+            if (sum==k){
+                count++;
+            }
+            for (int j=i+1;j<n;j++){
+                sum+=arr[j];
+                if (sum==k){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+};*/
 
 //{ Driver Code Starts.
 
