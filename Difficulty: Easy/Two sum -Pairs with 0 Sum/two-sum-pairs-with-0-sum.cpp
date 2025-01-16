@@ -50,92 +50,48 @@ class Matrix {
 class Solution {
   public:
     vector<vector<int>> getPairs(vector<int>& arr) {
-        
+        int n=arr.size();
         vector<vector<int>>result;
-        set<int>st;
-        for (auto i:arr){
-            st.insert(i);
-        }
         unordered_map<int,int>mp;
-        for (auto i:arr){
-            mp[i]++;
-        }
         
-        for (auto i:mp){
-            if (i.first==0){
-                if (i.second>=2){
-                    vector<int>ans={0,0};
-                    result.push_back(ans);
-                }
-            }
-        }
-        
-        int n=st.size();
-        
-        
-          for (auto it = st.begin(); it != st.end(); ++it){
-              
-            int complement=*it;
+        for (int i=0;i<n;i++){
+            int comp=arr[i];
+            int pmoc=-1*(comp);
             
-            if (complement!=0){
-            int an=complement*(-1);
-            
-            
-            if (st.find(an)!=st.end()){
-                vector<int>ans={complement,an};
+            if (mp.find(pmoc)!=mp.end()){
+                vector<int>ans={comp,pmoc};
                 sort(ans.begin(),ans.end());
-                result.push_back(ans);
+                  result.push_back(ans);
             }
-            }
-          }
-            
+            mp[comp]++;
           
+        }
         sort(result.begin(),result.end());
         result.erase(unique(result.begin(),result.end()),result.end());
         return result;
     }
 };
-
- /* int n=arr.size();
-       unordered_map<int,int>mp;
-        vector<int>res;
+/*
+class Solution {
+  public:
+    vector<vector<int>> getPairs(vector<int>& arr) {
+        int n=arr.size();
         vector<vector<int>>result;
-        
-        for (int i=0;i<n-1;i++){
-            int complement=arr[i];
-            int ans=complement*(-1);
-            if (mp.find(ans)!=mp.end()){
-                res.push_back(arr[i]);
-                res.push_back(ans);
-                sort(res.begin(),res.end());
-            }
-            mp[arr[i]]++;
-            
-            result.push_back(res);
-        }
-        sort(result.begin(),result.end());
-        return result;*/
-/*  int n=arr.size();
-        
-        vector<vector<int>>result;
-        
         for (int i=0;i<n-1;i++){
             vector<int>ans;
             for (int j=i+1;j<n;j++){
-                if ((arr[i]+arr[j])==0){
-                    ans.push_back(arr[i]);
-                    ans.push_back(arr[j]);
-                    sort (ans.begin(),ans.end());
-                    break;
+                if (arr[i]+arr[j]==0){
+                    ans={arr[i],arr[j]};
+                    sort(ans.begin(),ans.end());
                 }
             }
             result.push_back(ans);
         }
         sort(result.begin(),result.end());
+        result.erase(unique(result.begin(),result.end()),result.end());
         return result;
-        
-        Problem give duplicate and time complexity O(n^2)
-        */
+    }
+};*/
 
 //{ Driver Code Starts.
 //Back-end complete function Template for C++
