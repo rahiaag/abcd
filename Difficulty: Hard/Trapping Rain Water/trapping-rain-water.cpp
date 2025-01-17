@@ -8,30 +8,34 @@ using namespace std;
 class Solution {
   public:
     int maxWater(vector<int> &arr) {
-        int n=arr.size();
-        int max=0;
-        for(int i=0;i<n;i++)
-        {
-            if(arr[max]<arr[i])
-            max=i;
+
+        int left=0;
+        int right=arr.size()-1;
+        int maxLeft=0;
+        int maxRight=0;
+        int res=0;
+        
+        while (left<right){
+            if (arr[left]<=arr[right]){
+                if (arr[left]>=maxLeft){
+                    maxLeft=max(maxLeft,arr[left]);
+                }
+                else{
+                    res+=maxLeft-arr[left];
+                }
+                left++;
+            }
+            else{
+                if (arr[right]>=maxRight){
+                    maxRight=max(maxRight,arr[right]);
+                }
+                else{
+                    res+=maxRight-arr[right];
+                }
+                right--;
+            }
         }
-        int water=0;
-        int left_max=0;
-        for(int i=0;i<max;i++)
-        {
-            if(arr[i]>left_max)
-            left_max=arr[i];
-            
-            water=water+(left_max-arr[i]);
-        }
-         int right_max=0;
-        for(int i=n-1;i>max;i--)
-        {
-            if(arr[i]>right_max)
-            right_max=arr[i];
-            water=water+(right_max-arr[i]);
-        }
-        return water;
+        return res;
     }
 };
 
