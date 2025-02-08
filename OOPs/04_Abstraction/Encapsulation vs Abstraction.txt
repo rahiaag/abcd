@@ -1,0 +1,21 @@
+
+Encapsulation
+    ✅ Wrapping up data and methods into a single unit (class) and controlling their access using access specifiers.
+    ✅ It helps in data hiding by restricting direct access to certain details.
+    ✅ Makes the code modular and easier to maintain.
+    ✅ Primary purpose: Protects data from unintended modifications by restricting access to private members.
+    
+
+    
+Abstraction
+
+    ✅ Hiding unnecessary details and showing only the relevant features.
+    ✅ It is implementation hiding – the user only knows what a function does, not how it does it.
+    ✅ Primary purpose: Simplifies complex systems by only exposing useful functionalities, not for security.
+    
+
+
+Additional Differences:
+    - Encapsulation is about how data is restricted and organized, whereas Abstraction is about what details to show and what to hide.
+    - Encapsulation is implemented using: Classes, private/public/protected access modifiers.
+    - Abstraction is implemented using: Abstract classes, interfaces, and function overriding.

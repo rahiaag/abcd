@@ -1,0 +1,13 @@
+Advantage of MergeSort over quickSort
+
+- Stability : Maintain Stability
+- Worst Case : O(nLogn)
+- Better for Linked List : Efficient
+- Suitable for large Dataset
+
+Advantage of Quick Sort over MergeSort
+
+- Generally faster in Pratical
+- In Place sorting algorithm (No extra Space Needed)
+- Better Cache Performance on arrays
+- Easier to Implement and Understand

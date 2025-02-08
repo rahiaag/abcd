@@ -1,0 +1,2 @@
+In Structure the member are set public by default, while in class member are private by default
+we use struct for declaring structure and class for declaring class
