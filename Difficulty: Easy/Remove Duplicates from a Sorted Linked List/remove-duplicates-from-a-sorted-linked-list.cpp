@@ -48,15 +48,11 @@ struct Node {
 
 class Solution {
   public:
-  
+    // Function to remove duplicates from sorted linked list.
     Node* removeDuplicates(Node* head) {
         
         Node *p=head;
         Node *q=head->next;
-        
-         if(p == NULL || p->next == NULL){
-            return p;
-        }
         while (q!=NULL){
             if (p->data==q->data){
                 p->next=q->next;
