@@ -4,51 +4,61 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     // Function to find the next greater element for each element of the array.
     vector<int> nextLargerElement(vector<int>& arr) {
-        
-       /* int n=arr.size();
-        vector<int>ans;
-        ans.push_back(-1);
-        int maxi=INT_MIN;
-        for (int i=n-1;i>0;i--){
-            if (arr[i]>arr[i-1]){
-                ans.push_back(arr[i]);
-                maxi=max(maxi,arr[i]);
-            }
-            else{
-                if (maxi<=arr[i-1] ){
-                    ans.push_back(-1);
-                }
-                else{
-                ans.push_back(maxi);
-            }
-        }
-        }
-        reverse(ans.begin(),ans.end());
-        return ans;*/
-        
-        Im
+        // Stack to store elements that are greater than the current element.
+        stack<int> st;
         int n = arr.size();
-    vector<int> ans(n, -1);  // Initialize with -1
-    stack<int> s;
-    
-    for (int i = n - 1; i >= 0; --i) {
-        while (!s.empty() && s.top() <= arr[i]) {
-            s.pop();
+        
+        // Vector to store the result.
+        vector<int> ans(n);
+        
+        // The last element will always have -1 as its next greater element.
+        ans[n-1] = -1;
+        
+        // Push the last element onto the stack.
+        st.push(arr[n-1]);
+        
+        // Traverse the array from the second last element to the first.
+        for(int i = n-2; i >= 0; --i) {
+            // Pop elements from the stack until the top is greater than the current element.
+            while(!st.empty() and st.top() <= arr[i]) {
+                st.pop();
+            }
+            
+            // If the stack is empty, no greater element exists.
+            if(st.empty()) {
+                ans[i] = -1;
+            } else {
+                // The top of the stack is the next greater element.
+                ans[i] = st.top();
+            }
+            
+            // Push the current element onto the stack for future comparisons.
+            st.push(arr[i]);
         }
-        if (!s.empty()) {
-            ans[i] = s.top();
-        }
-        s.push(arr[i]);
-    }
-    
-    return ans;
-
+        
+        // Return the result vector.
+        return ans;
     }
 };
+ /*  int n=arr.size();
+        vector<int>ans;
+        for (int i=0;i<n-1;i++){
+            int maxi=-1;
+            for (int j=i+1;j<n;j++){
+                if (arr[j]>arr[i]){
+                    maxi=max(maxi,arr[j]);
+                }
+                ans.push_back(maxi);
+                break;
+            }
+        }
+        ans.push_back(-1);
+        return ans;*/
 
 //{ Driver Code Starts.
 
