@@ -8,10 +8,24 @@ class Solution {
   public:
     // Function is to check whether two strings are anagram of each other or not.
     bool areAnagrams(string& s1, string& s2) {
-        sort(s1.begin(),s1.end());
-        sort(s2.begin(),s2.end());
+        unordered_map<char,int>mp;
+        if (s1.size()!=s2.size()){
+            return false;
+        }
+        for (auto i:s1){
+            mp[i]++;
+        }
         
-        return (s1==s2);
+        for (int i=0;i<s2.size();i++){
+            if (mp[s2[i]]==0){
+                return false;
+            }
+            if (mp.find(s2[i])!=mp.end()){
+                mp[s2[i]]--;
+            }
+            
+        }
+        return true;
     }
 };
 
