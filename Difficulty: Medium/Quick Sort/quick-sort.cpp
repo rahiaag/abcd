@@ -11,14 +11,15 @@ void printArray(const vector<int>& arr) {
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     // Function to sort an array using quick sort algorithm.
     void quickSort(vector<int>& arr, int low, int high) {
         if (low<high){
-            int part=partition(arr,low,high);
-            quickSort(arr,low,part-1);
-            quickSort(arr,part+1,high);
+            int pivotPart=partition(arr,low,high);
+            quickSort(arr,low,pivotPart-1);
+            quickSort(arr,pivotPart+1,high);
         }
     }
 
@@ -28,27 +29,20 @@ class Solution {
     // to left of pivot and all greater elements to right of pivot.
     int partition(vector<int>& arr, int low, int high) {
         
-        int i=low;
-        int j=high;
         int pivot=arr[low];
+        int i=low+1;
         
-        while(i<j){
-            
-            while (arr[i]<=pivot && i<=high){
+        for (int j=low+1;j<=high;j++){
+            if (arr[j]<pivot){
+                swap(arr[i],arr[j]);
                 i++;
             }
-             while (arr[j]>pivot && j>=low){
-                j--;
-            }
-            
-            if (i<j){
-                swap(arr[i],arr[j]);
-            }
         }
-        swap(arr[low],arr[j]);
-        return j;
+        swap(arr[i-1],arr[low]);
+        return i-1;
     }
 };
+
 
 //{ Driver Code Starts.
 
