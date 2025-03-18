@@ -12,23 +12,24 @@ class Solution {
     int maxLen(vector<int>& arr) {
         int n=arr.size();
         int count=0;
-        int ans=0;
         unordered_map<int,int>mp;
+       // mp[0]=1;
         
+        int sum=0;
         for (int i=0;i<n;i++){
-            ans+=arr[i];
+            sum+=arr[i];
             
-            if (ans==0){
+            if (sum==0){
                 count=i+1;
             }
-            if (mp.find(ans)!=mp.end()){
-                count=max(count,i-mp[ans]);
+            if (mp.find(sum)!=mp.end()){
+                count=max(count,i-mp[sum]);
+              
             }
             else{
-                mp[ans]=i;
+                mp[sum]=i;
             }
-            }
-            
+        }
         return count;
     }
 };
