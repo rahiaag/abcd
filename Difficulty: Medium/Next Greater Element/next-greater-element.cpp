@@ -9,56 +9,25 @@ class Solution {
   public:
     // Function to find the next greater element for each element of the array.
     vector<int> nextLargerElement(vector<int>& arr) {
-        // Stack to store elements that are greater than the current element.
-        stack<int> st;
-        int n = arr.size();
+        int n=arr.size();
+        stack<int>nge;
+        vector<int>ans(n,-1);
         
-        // Vector to store the result.
-        vector<int> ans(n);
-        
-        // The last element will always have -1 as its next greater element.
-        ans[n-1] = -1;
-        
-        // Push the last element onto the stack.
-        st.push(arr[n-1]);
-        
-        // Traverse the array from the second last element to the first.
-        for(int i = n-2; i >= 0; --i) {
-            // Pop elements from the stack until the top is greater than the current element.
-            while(!st.empty() and st.top() <= arr[i]) {
-                st.pop();
+        for(int i=n-1;i>=0;i--){
+            while (!nge.empty() && nge.top()<=arr[i]){
+                nge.pop();
             }
             
-            // If the stack is empty, no greater element exists.
-            if(st.empty()) {
-                ans[i] = -1;
-            } else {
-                // The top of the stack is the next greater element.
-                ans[i] = st.top();
+            if (!nge.empty()){
+                ans[i]=nge.top();
             }
             
-            // Push the current element onto the stack for future comparisons.
-            st.push(arr[i]);
+            nge.push(arr[i]);
         }
-        
-        // Return the result vector.
         return ans;
     }
 };
- /*  int n=arr.size();
-        vector<int>ans;
-        for (int i=0;i<n-1;i++){
-            int maxi=-1;
-            for (int j=i+1;j<n;j++){
-                if (arr[j]>arr[i]){
-                    maxi=max(maxi,arr[j]);
-                }
-                ans.push_back(maxi);
-                break;
-            }
-        }
-        ans.push_back(-1);
-        return ans;*/
+
 
 //{ Driver Code Starts.
 
