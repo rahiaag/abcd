@@ -6,6 +6,7 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 // User function template in C++
 
 class Solution {
@@ -13,16 +14,20 @@ class Solution {
     // Function to return the count of number of elements in union of two arrays.
     int findUnion(vector<int>& a, vector<int>& b) {
         set<int>st;
-        
+        int n=b.size();
         for (auto i:a){
             st.insert(i);
         }
-        for (auto i:b){
-            st.insert(i);
+        
+        for (int i=0;i<n;i++){
+            if (st.find(b[i])==st.end()){
+                st.insert(b[i]);
+            }
         }
         return st.size();
     }
 };
+
 
 //{ Driver Code Starts.
 
