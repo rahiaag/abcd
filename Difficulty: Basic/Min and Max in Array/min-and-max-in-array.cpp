@@ -10,12 +10,19 @@ using namespace std;
 class Solution {
   public:
     pair<int, int> getMinMax(vector<int> arr) {
-        int a=arr.size();
-        sort(arr.begin(),arr.end());
-        int n=arr[0];
-        int m=arr[a-1];
+        int n=arr.size();
+        int minElement=INT_MAX;
+        int maxElement=INT_MIN;
         
-        return {n,m};
+        for (int i=0;i<n;i++){
+            if (arr[i]>maxElement){
+                maxElement=arr[i];
+            }
+            if (arr[i]<minElement){
+                minElement=arr[i];
+            }
+        }
+        return {minElement,maxElement};
     }
 };
 
