@@ -10,7 +10,14 @@ using namespace std;
 class Solution {
   public:
     pair<int, int> getMinMax(vector<int> arr) {
-        int n=arr.size();
+      int n=arr.size();
+      sort(arr.begin(),arr.end());
+      return{arr[0],arr[n-1]};
+    }
+};
+
+
+/*  int n=arr.size();
         int minElement=INT_MAX;
         int maxElement=INT_MIN;
         
@@ -22,10 +29,7 @@ class Solution {
                 minElement=arr[i];
             }
         }
-        return {minElement,maxElement};
-    }
-};
-
+        return {minElement,maxElement};*/
 
 //{ Driver Code Starts.
 
