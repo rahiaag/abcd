@@ -9,7 +9,7 @@ using namespace std;
 // User function Template for C++
 class Solution {
   public:
-    // Function to find maximum product subarray
+     
     int maxProduct(vector<int> &arr) {
         int n=arr.size();
         int suffix=1;
@@ -20,33 +20,37 @@ class Solution {
             if (prefix==0){
                 prefix=1;
             }
+        
             if (suffix==0){
                 suffix=1;
             }
             
             prefix*=arr[i];
-            suffix*=arr[n-i-1];
+            suffix*=arr[n-1-i];
             
-            maxProduct=max(maxProduct,max(prefix,suffix));
+            maxProduct=max(maxProduct,max(suffix,prefix));
         }
         return maxProduct;
         
+        
+        
+    
     }
 };
 
-/*
-int maxProduct=INT_MIN;
+/*int maxProduct=INT_MIN;
+        int n=arr.size();
         
         for (int i=0;i<n;i++){
-           int currProduct=1;
-            for (int j=i;j<n;j++){
+            int currProduct=arr[i];
+            maxProduct=max(maxProduct,currProduct);
+            
+            for (int j=i+1;j<n;j++){
                 currProduct*=arr[j];
                 maxProduct=max(maxProduct,currProduct);
             }
         }
-        return maxProduct;
-
-*/
+        return maxProduct;*/
 
 //{ Driver Code Starts.
 
