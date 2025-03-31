@@ -10,7 +10,24 @@ class Solution {
     // Please change the array in-place
     void insertionSort(vector<int>& arr) {
         
-        sort(arr.begin(),arr.end());
+        int n = arr.size();
+
+    // Traverse from the second element to the last
+    for (int i = 1; i < n; i++)
+    {
+        int key = arr[i]; // The element to be placed in the correct position
+        int j = i - 1;
+
+        // Shift elements of the sorted part that are greater than key
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+    
+        // Insert key at its correct position
+        arr[j + 1] = key;
+    }
     }
 };
 
