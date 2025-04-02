@@ -6,34 +6,34 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     int smallestSubWithSum(int x, vector<int>& arr) {
-        
         int n=arr.size();
-        int minElement=INT_MAX;
+        int minCount=INT_MAX;
         
         for (int i=0;i<n;i++){
-            int sum=arr[i];
+            int val=arr[i];
             int count=1;
-            
-            if (sum>x){
-                return count;
+            if (val>x){
+                minCount=min(minCount,count);
             }
             for (int j=i+1;j<n;j++){
-                sum+=arr[j];
+                val+=arr[j];
                 count++;
-                if (sum>x){
-                    minElement=min(count,minElement);
+                if (val>x){
+                    minCount=min(minCount,count);
                 }
             }
         }
-        if (minElement==INT_MAX){
+        if (minCount==INT_MAX){
             return 0;
         }
-        return minElement;
+        return minCount;
     }
 };
+
 
 //{ Driver Code Starts.
 
