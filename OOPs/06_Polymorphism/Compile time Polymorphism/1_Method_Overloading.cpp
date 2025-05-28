@@ -7,13 +7,18 @@ It comes from the Greek words "poly" (many) and "morph" (form), meaning "many fo
 ✨ Types of Polymorphism:
 
 1️⃣ Compile-time (Static) Polymorphism:  
+   - Compile-time polymorphism refers to the method where function calls are resolved at the time of compilation. 
+    The compiler decides which function to execute based on the function signature (number and type of parameters).
+    The decision is based on function signatures (name, number of parameters, data types, etc.).
+
+   - It improves performance because there is no overhead of function lookup during runtime.
+
    - Achieved through Method Overloading and Operator Overloading.  
 
    ✅ Method Overloading:  
    - Multiple functions in the same class share the same name but differ in:
      - The number of parameters.
-     - The types of parameters.
-     - The order of parameters (even if data types are the same).  
+     - The types of parameters. 
    - Works within the same class.  
    - Constructor overloading is also allowed.
 
@@ -21,7 +26,7 @@ It comes from the Greek words "poly" (many) and "morph" (form), meaning "many fo
    - Allows the same operator to perform different operations based on the context.
 
 ❌ What is NOT considered Method Overloading?  
-   - If two functions have identical parameters (same number, type, and order) but differ only in return type, it is not method overloading.
+   - If two functions have same name and identical parameters (same number, and type) but differ only in return type, it is not method overloading.
 */
 
 

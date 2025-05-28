@@ -1,0 +1,15 @@
+✔ A Dangling Pointer is a pointer that points to deleted memory, causing undefined behavior.
+
+📌 When Does the Dangling Pointer Problem Occur?
+1️⃣ Shallow Copy (Yes, Can Cause Dangling Pointers)
+Since shallow copy copies the pointer, not the data, if one object deletes the memory, the other object is left with a dangling pointer.
+This is a major issue when working with dynamically allocated memory.
+
+2️⃣ Deleting a Pointer (Without Shallow Copy)
+Even without shallow copy, if a pointer is deleted but still accessed, it causes a dangling pointer.
+
+Example: Simple Dangling Pointer
+
+int* ptr = new int(10);
+delete ptr;  // Memory is freed
+cout << *ptr;  // ❌ Dangling pointer (undefined behavior)

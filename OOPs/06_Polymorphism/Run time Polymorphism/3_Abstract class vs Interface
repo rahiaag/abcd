@@ -1,0 +1,22 @@
+✔ An interface is always an abstract class.
+❌ Not all abstract classes are interfaces. If an abstract class has even one implemented function, it is no longer considered a pure interface.
+
+📌 Simplified Explanation
+🔹 Abstract Class:
+
+Can have both pure virtual functions and normal (implemented) functions.
+Can contain member variables.
+Provides partial implementation that derived classes can use.
+🔹 Interface (Pure Abstract Class):
+
+Has only pure virtual functions (no concrete methods).
+No member variables (except constants).
+Provides no implementation, only a contract that derived classes must follow.
+
+📌 Key Difference
+Feature	                                          Abstract Class	                    Interface (Pure Abstract Class)
+Contains Pure Virtual Functions?	             ✅ Yes, at least one	            ✅ Yes, all functions must be pure virtual
+Contains Concrete (Implemented) Methods?	     ✅ Yes, it can                  	❌ No, only pure virtual functions
+Contains Data Members?	                         ✅ Yes	                            ❌ No (except constants)
+Purpose	                   Serves as a base class with some common behavior	        Acts as a contract that forces implementation
+Multiple Inheritance?	                         ✅ Supported                    	✅ Commonly used for multiple inheritance

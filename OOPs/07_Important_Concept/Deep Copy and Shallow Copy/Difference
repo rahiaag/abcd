@@ -1,0 +1,24 @@
+📌 Why Do We Use Deep and Shallow Copy?
+We use deep and shallow copy when a class contains pointers and dynamically allocated memory.
+Since the default copy constructor performs a shallow copy, we need deep copy to avoid problems like shared memory access and dangling pointers.
+
+     Without Pointers (int data)                                     With Pointers (int* data)
+    Each object has its own memory.	                              Objects share the same memory (shallow copy issue).
+    Default copy constructor works fine.	                      Default copy constructor causes problems.
+    No need for deep or shallow copy.	                          Deep copy is needed to allocate new memory.
+
+📌 Shallow Copy Recap
+✔ In shallow copy, we only copy the address of the object to a different pointer, not the actual data.
+✔ Problem 1: Shared Data Issue – Since both pointers point to the same memory, modifying data via one pointer affects the other.
+✔ Problem 2: Dangling Pointer Issue – If one object is deleted, the other object’s pointer still points to the freed memory, which may cause a crash or undefined behavior.
+✔ Advantage: Faster because no new memory is allocated—only the pointer is copied.
+
+📌 Why Do We Use Deep Copy?
+✔ Deep copy solves these problems by creating a new memory allocation for both the object and its data.
+✔ Since each object has its own separate memory, modifying one object does not affect the other.
+✔ No dangling pointers because each object manages its own memory independently.
+✔ Disadvantage: Uses more memory and is slower than shallow copy due to extra memory allocation and copying of data.
+
+✔ Deep copy is slower than shallow copy because it needs to allocate new memory and copy data manually.
+✔ However, deep copy prevents unintended modifications and dangling pointers, making it safer in most cases.
+

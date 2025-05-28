@@ -1,0 +1,9 @@
+📌 Simple Example to Understand Singleton Class
+A Singleton class ensures that only one object (instance) is created throughout the program.
+
+📌 Simple Real-Life Analogy
+Imagine you are building a railway station.
+
+There should be only one station master who controls everything.
+If multiple people try to become the station master, it will create confusion.
+So, we ensure only one station master exists → This is Singleton!

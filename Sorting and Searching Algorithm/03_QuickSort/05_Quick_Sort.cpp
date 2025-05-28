@@ -34,7 +34,7 @@ int partition(vector<int> &arr, int low, int high)
     int pivot = arr[low];
     int i = low + 1;
 
-    for (int j = low + 1; j <= high; j++)
+    for (int j = low +1 ; j <= high; j++)
     {
         if (arr[j] <= pivot)
         {

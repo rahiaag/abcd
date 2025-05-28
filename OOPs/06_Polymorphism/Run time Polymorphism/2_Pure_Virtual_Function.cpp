@@ -11,23 +11,40 @@ Pure virtual functions are useful when you want to define a common interface in 
 !Abstract Class
  An abstract class is a class that cannot be instantiated on its own and is meant to be a base class for other classes. It can include both abstract methods (pure virtual functions) and we cannot create object of that class
 
- !Interface
- interface is just like a class,which contains only abstract method 
- -it provide a way to achieve polymorphism
- define a common base class for a group of related classes
+ Use of abstract class
+ - it act as a bluerprint for the derieved class
+ - Used when multiple derived classes share a common behavior but have different implementations.
+ - it supports run time polymorphism
+ - it makes it necessary for the derieved to be implemented means there should be implementation for every derieved class
+ - Prevents instantiation of the base class while allowing object creation for derived classes.
 
- more flexibility
- achieved polymorphsim
- enforced contacts
+ !Interface
+ - an interface is a special type of abstract class that contains only pure virtual functions and no data members or concrete (implemented) methods
+ -it provide a way to achieve polymorphism
+ - define a common base class for a group of related classes
+
+✔ Contains only pure virtual functions (= 0).
+✔ No data members (except constants, if needed).
+✔ Derived classes must implement all functions.
+✔ Cannot be instantiated.
+✔ Used for multiple inheritance in C++.
 
 */
 #include <iostream>
 using namespace std;
 
+
+// Interface
 class Animal
 {
 public:
+
     virtual void sound() = 0; // Abstract Class
+   // virtual void connect() = 0;   // Pure virtual function
+  //  virtual void disconnect() = 0;  // Pure virtual function
+    //virtual ~Animal() {}  // Virtual destructor for proper cleanup
+
+    // This is creating problem because other virtual classes does not be implemented so we need to comment them
 };
 
 class Dog : public Animal

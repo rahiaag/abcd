@@ -16,31 +16,24 @@ Operator overloading allows you to define custom behavior for operators (like +,
 #include <iostream>
 using namespace std;
 
-class Complex
-{
+class Complex{
+public:
     int real, img;
 
-public:
-    Complex()
-    {
-    }
     Complex(int real, int img)
     {
         this->real = real;
         this->img = img;
     }
 
+    Complex operator+(Complex &obj)
+    {
+        return Complex(real + obj.real, img + obj.img);
+    }
+
     void display()
     {
         cout << real << " + " << img << "i" << endl;
-    }
-
-    Complex operator+(Complex &C)
-    {
-        Complex ans;
-        ans.real = real + C.real;
-        ans.img = img + C.img;
-        return ans;
     }
 };
 

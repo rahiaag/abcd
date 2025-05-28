@@ -3,6 +3,19 @@ If we want to call the Base Class Function then there are two Method :-
 1. Calling the function Explicitly
 2. Creating the Base Class Object
 
+if we want to acheive run time polymorphism then we must have to use virtual keyword and (pointer or reference)
+run time polymorphism takes time to look up in vtable
+
+reference
+ Derived obj;  
+ Base& ref = obj;
+
+pointer
+ Base *ptr;
+ Derived obj;
+ ptr = &obj;
+ ptr->function();
+
 */
 
 

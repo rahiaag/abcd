@@ -4,13 +4,13 @@
 If a method has parameters with the same names as the class's attributes, this is used to differentiate between them.
 This pointer refers to the current object of the class
 
-- accessing the instance variable and methods
-returning the current object
-passing the current object
-constructor chaining
-real life analogy
-think of 'this' as a pointer referring to themselves
-for instance, if john says, "I am john", he's using "I" to refer to himself, similarly,within a class ,'this' is used to refer to the current object
+✔ this pointer refers to the current object of the class.
+✔ It is used when parameter names are the same as class attributes, to avoid confusion.
+
+✔ Real-life analogy:
+
+Imagine John saying, "I am John."
+Here, "I" refers to himself → Similarly, this refers to the current object.
 */
 
 #include <bits/stdc++.h>

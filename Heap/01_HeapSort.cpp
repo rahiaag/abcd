@@ -30,7 +30,7 @@ void buildMinHeap(vector<int> &arr)
     int n = arr.size();
 
     // Build heap (rearrange array)
-    for (int i = n / 2 - 1; i >= 0; i--)
+    for (int i = n / 2 - 1; i >= 0; i--)   // we start from the n/2 because leaf nodes does not have anything to heapify
         heapify(arr, n, i);
 }
 // Main function to do heap sort

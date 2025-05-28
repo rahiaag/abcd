@@ -63,3 +63,16 @@ int main()
 
     return 0;
 }
+
+unordered_set<int>st;
+    for (int j=0;j<n;j++){
+        st.insert(mat[0][j]);
+    }
+
+    for (int i=1;i<n;i++){
+        for (int j=0;j<n;j++){
+            if (st.find(mat[i][j])==st.end()){
+                remove element for st
+            }
+        }
+    }
