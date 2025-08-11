@@ -61,6 +61,21 @@ public:
     }
 };
 
+// This will thorw error 
+//error: redefinition of 'int Example2::add(int, int)'
+
+class Example2
+{
+public:
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+    int add(int b, int a)
+    {
+        return a + b;
+    }
+};
 
 // Example 3 Type of Parameter is Changed(Will be Consider as Method Overloading)
 class Example3
