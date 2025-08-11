@@ -47,19 +47,20 @@ public:
     }
 };
 
-// Example 2 Order of Parameter is Changed(Will be Consider as Method Overloading)
+// Example 2 Order of Parameter is Changed (Valid Overloading if types differ)
 class Example2
 {
 public:
-    int add(int a, int b)
+    int add(int a, double b)
     {
         return a + b;
     }
-    int add(int b, int a)
+    int add(double b, int a)
     {
         return a + b;
     }
 };
+
 
 // Example 3 Type of Parameter is Changed(Will be Consider as Method Overloading)
 class Example3
